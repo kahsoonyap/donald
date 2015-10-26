@@ -97,6 +97,14 @@ def getPostsForUser(username):
     return posts
 """
 def getPost(username, slug):
+    connection = MongoClient()
+    db = connection ['donald']
+    result = db.user.find({"username":username, "slug": slug})
+    if result.count() == 0:
+        return False
+    else:
+        return result
+    """
     con = sqlite3.connect("donald.db")
     cur=con.cursor()
 
@@ -110,6 +118,7 @@ def getPost(username, slug):
     else:
         con.close()
         return False
+    """
 
 #REFACTOR BY SARAH
 def getComments(username, slug):

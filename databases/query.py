@@ -119,7 +119,9 @@ def getPost(username, slug):
         con.close()
         return False
     """
-
+print getPost("c", "stuff")
+print getPost("c", "stuffz")
+print getPost("d", "stuff")
 #REFACTOR BY SARAH
 def getComments(username, slug):
     """
